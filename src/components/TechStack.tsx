@@ -4,6 +4,7 @@ import { Code2, Server, Smartphone, Database, Cpu, Palette, Terminal, Sparkles }
 import { techStackData } from '../data/techStackData';
 import { TechItem } from '../types';
 import { soundFx } from '../utils/sound';
+import { TechIcon } from './TechIcons';
 
 export const TechStack: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('All');
@@ -101,19 +102,25 @@ export const TechStack: React.FC = () => {
               className="glass-card p-5 rounded-2xl border border-white/[0.08] hover:border-lime/40 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden"
             >
               <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-500">
-                    {tech.category}
-                  </span>
-                  <span
-                    className={`text-[9px] font-mono px-2 py-0.5 rounded-full border ${
-                      tech.highlight
-                        ? 'bg-lime/10 border-lime/30 text-lime font-bold'
-                        : 'bg-white/5 border-white/10 text-zinc-400'
-                    }`}
-                  >
-                    {tech.level}
-                  </span>
+                {/* Brand Logo & Meta Badges */}
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center p-2.5 group-hover:border-lime/40 group-hover:bg-lime/5 group-hover:scale-105 transition-all shadow-sm">
+                    <TechIcon name={tech.name} className="w-7 h-7" />
+                  </div>
+                  <div className="flex flex-col items-end gap-1">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-500">
+                      {tech.category}
+                    </span>
+                    <span
+                      className={`text-[9px] font-mono px-2 py-0.5 rounded-full border ${
+                        tech.highlight
+                          ? 'bg-lime/10 border-lime/30 text-lime font-bold'
+                          : 'bg-white/5 border-white/10 text-zinc-400'
+                      }`}
+                    >
+                      {tech.level}
+                    </span>
+                  </div>
                 </div>
 
                 <h3 className="font-display text-lg font-bold text-white group-hover:text-lime transition-colors mb-2">

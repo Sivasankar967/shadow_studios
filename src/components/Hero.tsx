@@ -94,7 +94,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContactModal, onExploreWork })
                 INTO DIGITAL
               </span>{' '}
               <br />
-              <span className="relative text-white underline decoration-lime/60 decoration-wavy decoration-2">
+              <span className="relative text-white">
                 REALITY.
               </span>
             </motion.h1>
